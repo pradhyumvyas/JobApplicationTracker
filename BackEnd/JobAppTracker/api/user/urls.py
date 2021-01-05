@@ -11,3 +11,4 @@ urlpatterns = [
     path('logout/<int:id>/', views.signout, name='signout'),
     path('', include(router.urls)),
 ]
+
