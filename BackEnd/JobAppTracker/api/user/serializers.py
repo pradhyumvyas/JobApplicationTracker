@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.hashers import make_password
 from rest_framework.decorators import authentication_classes, permission_classes
 
-from . models import CustomUser
+from . models import User
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     
@@ -29,7 +29,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     
     
     class Meta:
-        model = CustomUser
+        model = User
         extra_Kwargs = {'password':{'write_only':True}}
         fields = ('name', 'email', 'password', 'phone', 'gender', 
                     'is_active', 'is_staff', 'is_superuser')

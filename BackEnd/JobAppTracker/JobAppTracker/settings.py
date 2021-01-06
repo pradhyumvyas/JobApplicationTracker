@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+AUTH_USER_MODEL = "user.User" 
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -128,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = "user.CustomUser" 
+
 
 CORS_ORIGIN_ALLOW_ALL = True
 
