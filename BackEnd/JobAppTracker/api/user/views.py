@@ -20,8 +20,8 @@ def signin(request):
     if not request.method =="POST":
         return JsonResponse({'error': 'Send POST request'})
 
-    username = request.POST('username')
-    password = request.POST('password')
+    username = request.POST['username']
+    password = request.POST['password']
 
     # if not re.match("", email):
     #     return JsonResponse({'error': "Enter Valid Email"})
@@ -33,7 +33,7 @@ def signin(request):
     UserModel = get_user_model()
 
     try:
-        user = UserModel.objects.get(username)
+        user = UserModel.objects.get(username = username)
 
         if user.check_password(password):
             usr_dict = UserModel.objects.filter('username').values().first()
