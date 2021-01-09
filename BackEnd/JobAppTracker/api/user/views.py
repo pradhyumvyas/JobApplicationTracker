@@ -36,7 +36,7 @@ def signin(request):
         user = UserModel.objects.get(username = username)
 
         if user.check_password(password):
-            usr_dict = UserModel.objects.filter('username').values().first()
+            usr_dict = UserModel.objects.filter(username=username).values().first()
             usr_dict.pop('password')
 
             if user.session_token != "0":
@@ -59,6 +59,8 @@ def signin(request):
 
 def signout(request, id):
     logout(request)
+
+    #TODO User logout even they are not signin
 
     UserModel = get_user_model()
 
