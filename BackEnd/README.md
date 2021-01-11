@@ -1,5 +1,7 @@
 ## To does
-- Setup frontend and backend
-- Install Djanago Rest Framework
+- Setup Backend
+- Installation
+    - Djanago Rest Framework, 
+    - cors-header origin for Requesting API
 - Create SQLite3 DB
 - User Authentication (SignIn, SignUP, SignOut)
