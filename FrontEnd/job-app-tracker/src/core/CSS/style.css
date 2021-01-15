@@ -1,0 +1,21 @@
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(#2980b9), to(#2c3e50));
+  background-image: linear-gradient(to right, #2980b9, #2c3e50);
+  color: red;
+}
+
+.heading {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: xxx-large;
+  color: sandybrown;
+}
+
+.heading h5 {
+  font-size: x-large;
+  color: sandybrown;
+}
+/*# sourceMappingURL=style.css.map */
