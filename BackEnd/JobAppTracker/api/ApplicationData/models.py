@@ -21,8 +21,13 @@ class ApplicationData(models.Model):
     jobProfile = models.CharField(max_length=150)
     jobType = models.CharField(max_length=50, choices=JOB_TYPES)
 
-    Status = models.CharField(max_length=100)
+    STATUS = (
+        ('R', 'Rejected'),
+        ('S', 'Selected'),
+        ('P', 'Pending')
+    )
+
+    Status = models.CharField(max_length=100, choices=STATUS)
 
     def __str__(self):
         return self.companyName
-    
