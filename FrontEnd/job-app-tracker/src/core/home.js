@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 function Home() {
     const history = useHistory();
     const signinRoute = () => history.push('/Signin')
+    const signupRoute = () => history.push('/Signup')
 
     return (
         <div>
@@ -17,7 +18,7 @@ function Home() {
             </div>
 
             <div className="userAuth">
-                <Button variant="contained" color="primary" >Sign Up</Button>
+                <Button variant="contained" color="primary" onClick={signupRoute} >Sign Up</Button>
                 <Button variant="contained" color="primary"  onClick={signinRoute} >Login</Button>
 
             </div>
