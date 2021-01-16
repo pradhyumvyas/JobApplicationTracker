@@ -17,3 +17,17 @@ body{
         color: sandybrown;
     }
 }
+
+.userAuth{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    background-color: floralwhite;
+    width: 30%;
+    button{
+        // padding: 20px;
+        margin: 20px;
+        font-size: large;
+    }
+    
+}

@@ -19,6 +19,23 @@ body {
   color: sandybrown;
 }
 
+.userAuth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  background-color: floralwhite;
+  width: 30%;
+}
+
+.userAuth button {
+  margin: 20px;
+  font-size: large;
+}
+
 .signinForm {
   padding-top: 70px;
 }

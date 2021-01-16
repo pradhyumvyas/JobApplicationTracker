@@ -1,7 +1,14 @@
 import React from 'react'
 import './CSS/style.css'
+import {Button} from '@material-ui/core'
+import { useHistory } from "react-router-dom";
 
-function home() {
+
+
+function Home() {
+    const history = useHistory();
+    const signinRoute = () => history.push('/Signin')
+
     return (
         <div>
             <div className="heading">
@@ -9,9 +16,15 @@ function home() {
                 <h5>Where you can track any kind of application</h5>
             </div>
 
+            <div className="userAuth">
+                <Button variant="contained" color="primary" >Sign Up</Button>
+                <Button variant="contained" color="primary"  onClick={signinRoute} >Login</Button>
+
+            </div>
+
 
         </div>
     )
 }
 
-export default home
+export default Home
