@@ -18,4 +18,40 @@ body {
   font-size: x-large;
   color: sandybrown;
 }
+
+.signinForm {
+  padding-top: 70px;
+}
+
+.signin {
+  max-width: 300px;
+  color: black;
+  margin: auto;
+  border: 5px solid black;
+  padding: 20px 30px;
+  background-color: blanchedalmond;
+  font-size: x-large;
+}
+
+.signin h2 {
+  text-align: center;
+  color: darkblue;
+}
+
+.signin input {
+  width: 85%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 5%;
+  display: inline-block;
+  border: 3px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.signin button {
+  width: 85%;
+  text-align: center;
+  margin: 8px 0;
+}
 /*# sourceMappingURL=style.css.map */
