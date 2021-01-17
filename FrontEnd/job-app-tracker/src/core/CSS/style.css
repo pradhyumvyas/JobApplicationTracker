@@ -73,12 +73,12 @@ body {
 }
 
 .signup {
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
 .signupForm {
   border: 3px solid black;
-  padding: 30px;
+  padding: 27px;
   border-radius: 10%;
   background-color: blanchedalmond;
   max-width: 230px;

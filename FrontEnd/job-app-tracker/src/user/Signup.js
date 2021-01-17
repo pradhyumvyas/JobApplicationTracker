@@ -1,7 +1,13 @@
 import React from 'react'
 import {Button} from '@material-ui/core'
+import { useHistory } from 'react-router-dom'
+
 
 function Signup() {
+
+    const history = useHistory();
+    const loginPush = () => history.push('/signin')
+
     return (
         <div>
             <div className="signup">
@@ -24,6 +30,8 @@ function Signup() {
                         <input type="text" placeholder="Enter Password" />
 
                         <Button variant="contained" color="primary" >Sign up</Button>
+                        <Button color="primary" onClick={loginPush} >Login now ?</Button>
+
                     </form>
                 </div>
             </div>
