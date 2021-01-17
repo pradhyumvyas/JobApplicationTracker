@@ -1,7 +1,12 @@
 import React from 'react'
 import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 function Signin() {
+
+    const history = useHistory();
+    const signupPush = () => history.push('/signup')
+
     return (
         <div>
             <div className="signinForm">
@@ -16,7 +21,7 @@ function Signin() {
 
                         <Button variant="contained" color="primary" >Login</Button>
 
-                        <Button variant="contained" color="primary" >Sign Up</Button>
+                        <Button variant="contained" color="primary" onClick={signupPush} >Sign Up</Button>
                         <Button color="primary" >Forgot Password ?</Button>
                         
                     </form>
