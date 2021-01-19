@@ -1,7 +1,2 @@
-# Job Application Tracker FrontEnds
+# Job Application Tracker Front-Ends
 
-## UI Pages Done
-- Home Page
-- Login Page
-- Signup Page
-- Dashboard Page
