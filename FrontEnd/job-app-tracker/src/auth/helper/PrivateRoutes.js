@@ -1,10 +1,10 @@
 import React from 'react'
+import { Route, Redirect } from "react-router-dom";
 
 function PrivateRoutes() {
     return (
-        <div>
-            <h2>Private Routing</h2>
-        </div>
+        <Route />
+
     )
 }
 
