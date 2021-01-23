@@ -21,28 +21,56 @@ function Signup() {
 
     const {firstName, lastName, email, username, password, error, sucess} = values;
 
+    const handleChange = name => event =>{
+        setValues({...values, error:false, [name]:event.target.value})
+    }
+
+    const onSubmit = (event) => {
+        setValues({
+            ...values,
+            firstName:"",
+            lastName:"",
+            email:"",
+            username:"",
+            password:"",
+            error:"",
+            sucess:true
+        })
+        alert("Sign up Successfull")
+    }
+
     return (
         <div>
             <div className="signup">
                 <div className="signupForm">
                     <h2>Sign Up</h2>
                     <form action="">
-                        <label htmlFor="">First Name</label>
-                        <input type="text" placeholder="Enter First Name" value={firstName} />
+                        <label htmlFor="" className="text-light">First Name</label>
+                        <input required type="text" placeholder="Enter First Name" 
+                        onChange={handleChange("firstName")}
+                        value={firstName} required />
 
                         <label htmlFor="">Last Name</label>
-                        <input type="text" placeholder="Enter Last Name" value={lastName} />
+                        <input type="text" placeholder="Enter Last Name"
+                        onChange={handleChange("lastName")} 
+                        value={lastName} />
 
                         <label htmlFor="">Email</label>
-                        <input type="text" placeholder="Enter your email" value={email} />
+                        <input type="text" placeholder="Enter your email" 
+                        onChange={handleChange("email")} required
+                        value={email} />
 
                         <label htmlFor="">Username</label>
-                        <input type="text" placeholder="username" value={username} />
+                        <input type="text" placeholder="username" 
+                        onChange={handleChange("username")} required
+                        value={username} />
 
                         <label htmlFor="">Password</label>
-                        <input type="text" placeholder="Enter Password" value={password} />
+                        <input type="text" placeholder="Enter Password" 
+                        onChange={handleChange("password")} required
+                        value={password} />
 
-                        <Button variant="contained" color="primary" >Sign up</Button>
+                        <Button variant="contained" color="primary" onClick={onSubmit}>Sign up</Button>
                         <Button color="primary" onClick={loginPush} >Login now ?</Button>
 
                     </form>
