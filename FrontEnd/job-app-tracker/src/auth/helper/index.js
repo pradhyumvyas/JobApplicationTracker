@@ -16,3 +16,9 @@ export const signup = user => {
     })
     .catch(err => console.log(err))
 }
+
+export const signin = user =>{
+    return fetch(`${API}/login`. {
+        
+    })
+}
