@@ -78,10 +78,12 @@ body {
 
 .signupForm {
   border: 3px solid black;
-  padding: 27px;
+  padding: 10px;
   border-radius: 10%;
   background-color: blanchedalmond;
-  max-width: 350px;
+  max-width: 400px;
+  -webkit-box-shadow: 6px;
+          box-shadow: 6px;
   margin: auto;
   color: black;
   font-size: x-large;
