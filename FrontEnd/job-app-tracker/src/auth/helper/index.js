@@ -18,7 +18,7 @@ export const signup = user => {
 }
 
 export const signin = user =>{
-    return fetch(`${API}/login`. {
+    return fetch(`${API}/login`, {
         
     })
 }

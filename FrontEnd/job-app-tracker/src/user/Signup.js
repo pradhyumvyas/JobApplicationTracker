@@ -26,17 +26,33 @@ function Signup() {
     }
 
     const onSubmit = (event) => {
-        setValues({
-            ...values,
-            firstName:"",
-            lastName:"",
-            email:"",
-            username:"",
-            password:"",
-            error:"",
-            sucess:true
-        })
-        alert("Sign up Successfull")
+
+        event.preventDefault();
+            setValues({...values, error:false})
+            signup({firstName, lastName, email, username, password})
+            .then((data) =>{
+                console.log("Data", data);
+                if(data.email === email){
+                    setValues({
+                        ...values,
+                        firstName:"",
+                        lastName:"",
+                        email:"",
+                        username:"",
+                        password:"",
+                        error:"",
+                        sucess:true
+                    })
+                }
+                else{
+                    setValues({
+                        ...values,
+                        error:true,
+                        success:false
+                    })
+                }
+            })
+            .catch((e) => console.log(e))
     }
 
     return (
@@ -66,7 +82,7 @@ function Signup() {
                         value={username} />
 
                         <label htmlFor="">Password</label>
-                        <input type="text" placeholder="Enter Password" 
+                        <input type="password" placeholder="Enter Password" 
                         onChange={handleChange("password")} required
                         value={password} />
 
