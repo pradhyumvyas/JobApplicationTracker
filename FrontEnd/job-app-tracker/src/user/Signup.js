@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Button} from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
 import {signup} from '../auth/helper'
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 
 function Signup() {
@@ -32,6 +33,7 @@ function Signup() {
             signup({firstName, lastName, email, username, password})
             .then((data) =>{
                 console.log("Data", data);
+                console.log("Error is : ", data['email'])
                 if(data.email === email){
                     setValues({
                         ...values,
@@ -50,9 +52,33 @@ function Signup() {
                         error:true,
                         success:false
                     })
+                    console.log("In the else part and error is : ", error)
                 }
             })
             .catch((e) => console.log(e))
+    }
+
+    const errorMessage = () =>{
+        if (values.error === true){
+            return(
+                <Alert severity="error" onClose={() => {}}>
+                    <AlertTitle>Error</AlertTitle>
+                    Something Went Wrong please try again with different — <strong>Email and Username!</strong>
+                </Alert>
+            )
+        }
+    }
+
+
+    const successMessage = () =>{
+        if(values.sucess === true){
+            return (
+                <Alert severity="success" onClose={() => {}}>
+                    <AlertTitle>Success</AlertTitle>
+                    Signup completed. Please <strong> <a onClick={loginPush} >Login Here.</a> </strong>
+                </Alert>
+            )
+        }
     }
 
     const signupForm = () => {
@@ -99,6 +125,8 @@ function Signup() {
 
     return (
         <div className="">
+            {successMessage()}
+            {errorMessage()}
             {signupForm()}
         </div>
             
