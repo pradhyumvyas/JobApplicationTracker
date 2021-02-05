@@ -30,7 +30,7 @@ function Signin() {
             return(
                 <Alert severity="error" onClose={() => {}}>
                     <AlertTitle>Error</AlertTitle>
-                    Something Went Wrong please try again with different — <strong>Email and Username!</strong>
+                    Something Went Wrong — <strong>Check your username and password</strong>
                 </Alert>
             )
         }
@@ -54,6 +54,11 @@ function Signin() {
         signin({username, password})
         .then(
             data => {
+                setValues({
+                    ...values,
+                    username:"",
+                    password:""
+                })
                 console.log("Data", data);
                 if(data.token){
                     authenticate(data, ()=>{
@@ -66,6 +71,9 @@ function Signin() {
                 } else{
                     setValues({
                         ...values,
+                        username:"",
+                        password:"",
+                        error:true,
                         loading:false
                     })
                 }
