@@ -26,7 +26,7 @@ def signin(request):
     # if not re.match("", email):
     #     return JsonResponse({'error': "Enter Valid Email"})
 
-    if len(password) <3:
+    if len(password)<3:
         return JsonResponse({'error': 'password is less than 5 digit'})
 
     
