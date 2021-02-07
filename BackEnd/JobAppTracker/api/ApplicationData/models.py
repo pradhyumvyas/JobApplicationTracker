@@ -15,7 +15,7 @@ class ApplicationData(models.Model):
 
     companyName = models.CharField(max_length=300)
     applyDate = models.DateField()
-    responseDate = models.DateField()
+    responseDate = models.DateField() 
     jobLocation = models.CharField(max_length=150)
 
     jobProfile = models.CharField(max_length=150)
@@ -30,4 +30,4 @@ class ApplicationData(models.Model):
     Status = models.CharField(max_length=100, choices=STATUS)
 
     def __str__(self):
-        return self.companyName
+        return self.companyName 

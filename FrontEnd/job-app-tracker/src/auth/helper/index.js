@@ -70,19 +70,19 @@ export const isAuthenticated = () =>{
     }
 }
 
-// export const signout = next => {
-//     const userId = isAuthenticated() && isAuthenticated().user.id
+export const signout = next => {
+    const userId = isAuthenticated() && isAuthenticated().user.id
 
-//     if(typeof window !== undefined){
-//         localStorage.removeItem("jwt")
+    if(typeof window !== undefined){
+        localStorage.removeItem("jwt")
 
-//         return fetch(`${API}user/logout/${userId}/`, {
-//             method:"GET"
-//         })
-//         .then(response => {
-//             console.log("Signout Success")
-//             next();
-//         })
-//         .catch(err => console.log(err))
-//     }
-// }
+        return fetch(`${API}user/logout/${userId}/`, {
+            method:"GET"
+        })
+        .then(response => {
+            console.log("Signout Success")
+            next();
+        })
+        .catch(err => console.log(err))
+    }
+}
