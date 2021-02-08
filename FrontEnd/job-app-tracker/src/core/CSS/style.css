@@ -109,4 +109,13 @@ body {
 body {
   color: black;
 }
+
+.myNav {
+  background-color: cadetblue;
+}
+
+.MuiButton-label {
+  margin-right: auto;
+  width: 500px;
+}
 /*# sourceMappingURL=style.css.map */
