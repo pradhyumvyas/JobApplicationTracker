@@ -1,9 +1,5 @@
 import {API} from "../../Backend"
 
-const mailOnSignup = () =>{
-    return 
-}
-
 
 export const signup = user => {
     return fetch(`${API}user/`, {
@@ -36,12 +32,10 @@ export const signin = user =>{
     for(var key of formData.keys()){
         console.log("MyKey : ", key);
     }
-
     return fetch(`${API}user/login/`,{
         method:"POST",
         body: formData
     })
-
     .then((response) =>{
         console.log("SUCESS", response)
         return response.json()
