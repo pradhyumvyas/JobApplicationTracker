@@ -10,7 +10,6 @@ class ApplicationData(models.Model):
         ('J', 'Full Time')
     )
 
-    serialNumber = models.IntegerField()
     username = models.CharField(max_length=250)
 
     companyName = models.CharField(max_length=300)
@@ -27,7 +26,7 @@ class ApplicationData(models.Model):
         ('P', 'Pending')
     )
 
-    Status = models.CharField(max_length=100, choices=STATUS)
+    status = models.CharField(max_length=100, choices=STATUS)
 
     def __str__(self):
         return self.companyName 
