@@ -8,6 +8,3 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-
-def welcomeAppAPI(request):
-    return HttpResponse("Welcome To The Application Data API")
