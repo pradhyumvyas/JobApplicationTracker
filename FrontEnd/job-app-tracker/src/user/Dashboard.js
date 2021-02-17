@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {AppBar, Toolbar, Typography, Button, IconButton} from '@material-ui/core'
 // import MenuIcon from '@material-ui/icons/Menu';
 import {signout, isAuthenticated} from '../auth/helper/index'
@@ -7,6 +7,22 @@ import { useHistory } from 'react-router-dom'
 function Dashboard() {
     const history = useHistory();
     const signoutPush = () => history.push('/')
+
+    const [values, setValues] = useState({
+        companyName:"",
+        applyDate:"",
+        responseDate:"",
+        profile:"",
+        jobType:"",
+        status:"",
+        location:""
+    })
+    const {companyName, applyDate, responseDate, profile, jobType, status, location} = values;
+
+    const handleChange = name => event =>{
+        setValues({...values, error:false, [name]:event.target.value})
+    }
+
 
     const homeRedirect = () =>{
         if(isAuthenticated()){
@@ -33,10 +49,14 @@ function Dashboard() {
         )
     }
 
+    const onSubmit = () =>{
+        return alert("hee")
+    }
+
     const applyForm = () =>{
         return(
             <div className="applyForm">
-                <div className="">
+                <div className="dataForm">
                 <form action="">
                             <label htmlFor="" className="text-light">Company Name</label>
                             <input required type="text" placeholder="Company Name" 
@@ -73,9 +93,7 @@ function Dashboard() {
                             onChange={handleChange("status")} required
                             value={status} />
     
-                            <Button variant="contained" color="primary" onClick={onSubmit}>Sign up</Button>
-                            <Button color="primary" onClick={loginPush} >Login now ?</Button>
-    
+                            <Button variant="contained" color="primary" onClick={onSubmit}>Done</Button>
                         </form>
                 </div>
             </div>
@@ -84,6 +102,7 @@ function Dashboard() {
     return (
         <div>
             {myNavbar()}
+            {applyForm()}
         </div>
     )
 }

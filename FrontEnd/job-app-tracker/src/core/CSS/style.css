@@ -118,4 +118,24 @@ body {
   margin-right: auto;
   width: 500px;
 }
+
+.dataForm {
+  margin: auto;
+  padding: 20px;
+  max-width: 200px;
+  border: 7px solid blueviolet;
+  -webkit-box-shadow: black;
+          box-shadow: black;
+  background-color: blanchedalmond;
+}
+
+.dataForm input {
+  border-radius: 5%;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.applyForm {
+  padding: 20px;
+}
 /*# sourceMappingURL=style.css.map */
