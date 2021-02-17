@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {AppBar, Toolbar, Typography, Button, IconButton} from '@material-ui/core'
+import {AppBar, Toolbar, Typography, Button, IconButton, Modal} from '@material-ui/core'
 // import MenuIcon from '@material-ui/icons/Menu';
 import {signout, isAuthenticated} from '../auth/helper/index'
 import { useHistory } from 'react-router-dom'
@@ -55,6 +55,7 @@ function Dashboard() {
 
     const applyForm = () =>{
         return(
+            <Modal>
             <div className="applyForm">
                 <div className="dataForm">
                 <form action="">
@@ -97,12 +98,13 @@ function Dashboard() {
                         </form>
                 </div>
             </div>
+            </Modal>
         )
     }
     return (
         <div>
             {myNavbar()}
-            {applyForm()}
+            <Button variant="contained" color="Primary" onClick={applyForm}>Add Data</Button>
         </div>
     )
 }
