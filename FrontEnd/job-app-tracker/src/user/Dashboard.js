@@ -55,7 +55,6 @@ function Dashboard() {
 
     const applyForm = () =>{
         return(
-            <Modal>
             <div className="applyForm">
                 <div className="dataForm">
                 <form action="">
@@ -98,13 +97,13 @@ function Dashboard() {
                         </form>
                 </div>
             </div>
-            </Modal>
         )
     }
     return (
         <div>
             {myNavbar()}
-            <Button variant="contained" color="Primary" onClick={applyForm}>Add Data</Button>
+            {/* <Button variant="contained" color="Primary" onClick={applyForm}>Add Data</Button> */}
+            {applyForm()}
         </div>
     )
 }
