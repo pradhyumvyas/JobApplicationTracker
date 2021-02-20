@@ -138,4 +138,21 @@ body {
 .applyForm {
   padding: 20px;
 }
+
+.addBUtton {
+  text-align: center;
+  margin: auto;
+  padding: 50px;
+}
+
+.dataForm {
+  color: blue;
+}
+
+.myModal {
+  width: 500px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
 /*# sourceMappingURL=style.css.map */

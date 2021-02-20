@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Button,Modal, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField} from '@material-ui/core'
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from '@material-ui/core'
 
 function ModalForm (){
 
@@ -32,13 +32,12 @@ function ModalForm (){
         return alert("hee")
     }
 
-
     return (
-        <div>
-        <Button variant="contained" color="primary" onClick={handleClickOpen}>
-            Add Data
+        <div className="myModal">
+        <Button className="addButton" variant="contained" color="primary" onClick={handleClickOpen}>
+            Add
         </Button>
-        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <Dialog open={open}   onClose={handleClose} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title">Add Application Data</DialogTitle>
             <DialogContent>
             <div className="applyForm">
