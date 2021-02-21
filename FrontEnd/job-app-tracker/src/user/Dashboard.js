@@ -42,7 +42,7 @@ function Dashboard(){
             {myNavbar()}
             {modalForm()}
             {/* <modalForm /> */}
-            {showData()}
+            {/* {showData()} */}
         </div>
     )
 }
