@@ -4,6 +4,7 @@ import {AppBar, Toolbar, Typography, Button, IconButton, Modal} from '@material-
 import {signout, isAuthenticated} from '../auth/helper/index'
 import { useHistory } from 'react-router-dom'
 import modalForm from './helper/modalForm'
+import showData from './helper/showData'
 
 function Dashboard(){
     const history = useHistory();
@@ -35,13 +36,13 @@ function Dashboard(){
         )
     }
 
-   
     
     return (
         <div>
             {myNavbar()}
             {modalForm()}
             {/* <modalForm /> */}
+            {showData()}
         </div>
     )
 }
