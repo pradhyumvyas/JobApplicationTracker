@@ -5,7 +5,7 @@ import {API} from "../../Backend"
 function showData() {
     const fetchData = () =>{
         return fetch(`${API}/ApplicationData`, {
-            method:"POST",
+            method:"GET",
             headers:{
                 Accept:"application/json",
                 "Content-Type":"application/json"
