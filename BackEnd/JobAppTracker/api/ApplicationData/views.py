@@ -28,12 +28,13 @@ def validate_user_session(id, token):
 
 @csrf_exempt
 def add(request, id, token):
-    if not validate_user_session(id, token):
+    if not validate_user_session(id, token, username):
         return JsonResponse({"errror":"please Login"})
     if request.method == "POST":
         print("JHIIIIIIIIIIIIIIIIIIIIIIII")
 
         user_id = id
+        username = request.POST['username']
         companyName = request.POST['companyName']
         applyDate = request.POST['applyDate']
         responseDate = request.POST['responseDate']
