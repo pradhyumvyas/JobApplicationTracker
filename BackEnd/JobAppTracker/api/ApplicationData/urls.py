@@ -9,4 +9,5 @@ router.register(r'',views.DataViewSet)
 urlpatterns = [
     path('add/<str:id>/<str:token>/',  views.add, name='data.add'),
     path('', include(router.urls)),
+    path('data/', views.fetchData, name='fetchData')
 ]

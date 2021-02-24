@@ -52,7 +52,14 @@ def add(request, id, token):
         newData.save()
     return JsonResponse({'error':'i am'})
 
+@csrf_exempt
 
+def fetchData(request):
+    if(request.method == 'GET'):
+        result = ApplicationData.objects.all()
+        serializer = DataSerializer(result, many = True)
+        # return Response(serializer.data)
+        return HttpResponseNotFound('<h1>Page not found</h1>')
 class DataViewSet(viewsets.ModelViewSet):
     queryset = ApplicationData.objects.all()
     serializer_class = DataSerializer
