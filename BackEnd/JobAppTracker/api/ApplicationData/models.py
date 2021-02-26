@@ -11,6 +11,7 @@ class ApplicationData(models.Model):
     )
 
     username = models.CharField(max_length=250)
+    id = models.AutoField(primary_key=True)
 
     companyName = models.CharField(max_length=300)
     applyDate = models.DateField()

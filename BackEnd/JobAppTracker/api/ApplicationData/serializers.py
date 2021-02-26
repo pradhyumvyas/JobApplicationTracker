@@ -4,4 +4,4 @@ from .models import ApplicationData
 class DataSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ApplicationData
-        fields = ('companyName', 'applyDate', 'responseDate', 'jobLocation', 'jobType', 'status')
+        fields = ('id','companyName', 'applyDate', 'responseDate', 'jobLocation', 'jobType', 'status')
