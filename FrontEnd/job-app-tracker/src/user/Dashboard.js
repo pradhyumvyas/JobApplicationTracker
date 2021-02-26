@@ -1,10 +1,8 @@
-import React, {useState} from 'react'
-import {AppBar, Toolbar, Typography, Button, IconButton, Modal} from '@material-ui/core'
-// import MenuIcon from '@material-ui/icons/Menu';
+import React from 'react'
+import {AppBar, Toolbar, Button} from '@material-ui/core'
 import {signout, isAuthenticated} from '../auth/helper/index'
 import { useHistory } from 'react-router-dom'
 import modalForm from './helper/modalForm'
-import { fetchData } from './helper/fetchData'
 import ShowData from './helper/showData'
 
 

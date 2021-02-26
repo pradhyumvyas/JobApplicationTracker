@@ -20,7 +20,8 @@ function Signup() {
         sucess:false,
     })
 
-    const {firstName, lastName, email, username, password, error, sucess} = values;
+    // const {firstName, lastName, email, username, password, error, sucess} = values;
+    const {firstName, lastName, email, username, password, error} = values;
 
     const handleChange = name => event =>{
         setValues({...values, error:false, [name]:event.target.value})

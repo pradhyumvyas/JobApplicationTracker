@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import { signin, authenticate, isAuthenticated } from '../auth/helper';
+import { signin, authenticate} from '../auth/helper';
 import { Alert, AlertTitle } from '@material-ui/lab';
 
 
@@ -19,7 +19,8 @@ function Signin() {
         sucess:false,
         didRedirect:false,
     })
-    const {username, password, loading, error, sucess, didRedirect} = values;
+    // const {username, password, loading, error, sucess, didRedirect} = values;
+    const {username, password, didRedirect} = values;
 
     const handleChange = name => event =>{
         setValues({...values, error:false, [name]:event.target.value})

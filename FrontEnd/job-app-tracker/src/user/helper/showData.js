@@ -22,7 +22,7 @@ export default function ShowData() {
         .catch(err => console.log(err))
     }
     useEffect(() => {
-        loadAllData();
+        loadAllData()
     }, []);
     return (
         <div>
