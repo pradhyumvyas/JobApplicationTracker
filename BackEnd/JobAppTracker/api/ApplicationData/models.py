@@ -6,8 +6,8 @@ from django.db import models
 class ApplicationData(models.Model):
 
     JOB_TYPES = (
-        ('I','Internship'),
-        ('J', 'Full Time')
+        ('Internship','Internship'),
+        ('Full Time', 'Full Time')
     )
 
     username = models.CharField(max_length=250)
@@ -21,9 +21,9 @@ class ApplicationData(models.Model):
     jobType = models.CharField(max_length=50, choices=JOB_TYPES)
 
     STATUS = (
-        ('R', 'Rejected'),
-        ('S', 'Selected'),
-        ('P', 'Pending')
+        ('Rejected', 'Rejected'),
+        ('Selected', 'Selected'),
+        ('Pending', 'Pending')
     )
 
     status = models.CharField(max_length=100, choices=STATUS)

@@ -55,11 +55,12 @@ def add(request, id, token):
 @csrf_exempt
 
 def fetchData(request):
+    # fields = ('companyName','applyDate','responseDate', 'jobLocation', 'jobType','status')
+    result = ApplicationData.objects.all()
     if(request.method == 'GET'):
-        result = ApplicationData.objects.all()
-        serializer = DataSerializer(result, many = True)
+        mySerializer = DataSerializer(result, many = True)
         # return Response(serializer.data)
-        return HttpResponseNotFound('<h1>Page not found</h1>')
+        return JsonResponse(mySerializer.data, safe=False)
 class DataViewSet(viewsets.ModelViewSet):
     queryset = ApplicationData.objects.all()
     serializer_class = DataSerializer

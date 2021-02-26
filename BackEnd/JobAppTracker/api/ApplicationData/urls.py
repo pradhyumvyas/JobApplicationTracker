@@ -8,6 +8,7 @@ router.register(r'',views.DataViewSet)
 
 urlpatterns = [
     path('add/<str:id>/<str:token>/',  views.add, name='data.add'),
+    path('data/', views.fetchData, name='fetchData'),
     path('', include(router.urls)),
-    path('data/', views.fetchData, name='fetchData')
+    # path(r'', views.DataViewSet, name='mydata')
 ]
