@@ -34,9 +34,11 @@ function ModalForm (){
 
     return (
         <div className="myModal">
-        <Button className="addButton" variant="contained" color="primary" onClick={handleClickOpen}>
-            Add
-        </Button>
+        <div className="buttonAdd">
+            <Button className="addButton" variant="contained" color="primary" onClick={handleClickOpen}>
+                Add Data
+            </Button>
+        </div>
         <Dialog open={open}   onClose={handleClose} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title">Add Application Data</DialogTitle>
             <DialogContent>

@@ -18,6 +18,7 @@ function Dashboard(){
         }
         else{
             alert("No user is login")
+            signoutPush()
         }
         return(console.log("here"))
     }
