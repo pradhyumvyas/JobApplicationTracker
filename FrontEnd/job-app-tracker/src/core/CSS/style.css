@@ -155,4 +155,20 @@ body {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
+
+.dataTable {
+  padding: 20px;
+  text-align: center;
+}
+
+.mainTable {
+  background-color: blanchedalmond;
+  margin: auto;
+  text-align: center;
+}
+
+.status {
+  color: green;
+  padding: 50px;
+}
 /*# sourceMappingURL=style.css.map */

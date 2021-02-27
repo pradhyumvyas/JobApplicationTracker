@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import { fetchData } from './fetchData'
 import { DataGrid } from '@material-ui/data-grid';
+import Button from '@material-ui/core/Button';
+
 
 
 export default function ShowData() {
@@ -46,12 +48,43 @@ export default function ShowData() {
             field: 'status',
             headerName: 'Status',
             width: 120,
+            className:"status"
         }
     ];
+    const statusFunction = (clr) =>{
+        if(clr == "Selected"){
+            const mlr = <div className="status">
+                {/* <Button variant="contained" color="secondary">
+                    Selected
+                </Button> */}
+                Selected
+            </div>
+            console.log('meee',mlr.props.children);
+            return (
+                mlr.props.children
+            )
+        } else if(clr == "Pending"){
+            const mlr = <div className="status">
+                Pending
+            </div>
+            return (
+                mlr.props.children
+            )
+        } else{
+            const mlr = <div className="status">
+                Rejected
+            </div>
+            return (
+                mlr.props.children
+            )
+        }
+    }
 
     const rows = []
     items.map(item =>{
-        rows.push({id:item.id, cn:item.companyName, ap:item.applyDate, rp:item.responseDate, loc:item.jobLocation, type:item.jobType, status:item.status})
+        rows.push({id:item.id, cn:item.companyName, ap:item.applyDate, 
+                    rp:item.responseDate, loc:item.jobLocation, type:item.jobType, 
+                    status:statusFunction(item.status)})
     })
     // console.log("My array chek", rows);
 
@@ -67,18 +100,10 @@ export default function ShowData() {
     return (
         <div className="dataTable">
 
-        <div style={{ height: 600, width: '100%' }}>
-            <DataGrid rows={rows} columns={columns} pageSize={7} checkboxSelection />
-        </div>
-                {/* <ul>
-            <h1>My data</h1>
-        {items.map(item => (
-            <li key={item.id}>
-                {item.companyName}
-                {item.applyDate}
-            </li>
-        ))}
-        </ul> */}
+            <div style={{ height: 600, width:'auto' }} className="mainTable">
+                <DataGrid rows={rows} columns={columns} pageSize={7} checkboxSelection />
+            </div>
+        
         </div>
     );
 }
