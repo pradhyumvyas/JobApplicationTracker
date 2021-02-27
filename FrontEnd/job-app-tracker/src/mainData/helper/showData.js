@@ -50,20 +50,29 @@ export default function ShowData() {
     ];
 
     const rows = [
-    //     items.map(item => (
-    //         {id:item.id ,cn:item.companyName}
+        items.map(item => (
+            {id:item.id ,cn:item.companyName}
         
-    // ))
-    { id: 1, cn: 'Snow', ap: 'Jon', status: 35 },
-    { id: 2, cn: 'Lannister', ap: 'Cersei', status: 42 },
+    ))
+    // { id: 1, cn: 'Snow', ap: 'Jon', status: 35 },
+    // { id: 2, cn: 'Lannister', ap: 'Cersei', status: 42 },
 
     ];
     return (
         <div className="dataTable">
 
-        <div style={{ height: 600, width: '100%' }}>
+        {/* <div style={{ height: 600, width: '100%' }}>
             <DataGrid rows={rows} columns={columns} pageSize={7} checkboxSelection />
-        </div>
+        </div> */}
+                <ul>
+            <h1>My data</h1>
+        {items.map(item => (
+            <li key={item.id}>
+                {item.companyName}
+                {item.applyDate}
+            </li>
+        ))}
+        </ul>
         </div>
     );
 }
