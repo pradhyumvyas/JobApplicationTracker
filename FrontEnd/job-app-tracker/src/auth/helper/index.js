@@ -20,7 +20,7 @@ export const signin = user =>{
     const formData = new FormData()
 
     for (const name in user ){
-        console.log(user[name]);
+        // console.log("meee",user);
         formData.append(name, user[name])
     }
 
@@ -29,9 +29,9 @@ export const signin = user =>{
     // formData.append('email', email)
     // formData.append('password', password)
 
-    for(var key of formData.keys()){
-        console.log("MyKey : ", key);
-    }
+    // for(var key of formData.keys()){
+    //     console.log("MyKey : ", key);
+    // }
     return fetch(`${API}user/login/`,{
         method:"POST",
         body: formData

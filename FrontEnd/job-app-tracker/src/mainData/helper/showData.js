@@ -49,22 +49,28 @@ export default function ShowData() {
         }
     ];
 
-    const rows = [
-        items.map(item => (
-            {id:item.id ,cn:item.companyName}
+    const rows = []
+    items.map(item =>{
+        rows.push({id:item.id, cn:item.companyName, ap:item.applyDate, rp:item.responseDate, loc:item.jobLocation, type:item.jobType, status:item.status})
+    })
+    // console.log("My array chek", rows);
+
+    // const rows = [
+    // //     items.map(item => (
+    // //         {id:item.id ,cn:item.companyName}
         
-    ))
+    // // )),
     // { id: 1, cn: 'Snow', ap: 'Jon', status: 35 },
     // { id: 2, cn: 'Lannister', ap: 'Cersei', status: 42 },
 
-    ];
+    // ];
     return (
         <div className="dataTable">
 
-        {/* <div style={{ height: 600, width: '100%' }}>
+        <div style={{ height: 600, width: '100%' }}>
             <DataGrid rows={rows} columns={columns} pageSize={7} checkboxSelection />
-        </div> */}
-                <ul>
+        </div>
+                {/* <ul>
             <h1>My data</h1>
         {items.map(item => (
             <li key={item.id}>
@@ -72,7 +78,7 @@ export default function ShowData() {
                 {item.applyDate}
             </li>
         ))}
-        </ul>
+        </ul> */}
         </div>
     );
 }
