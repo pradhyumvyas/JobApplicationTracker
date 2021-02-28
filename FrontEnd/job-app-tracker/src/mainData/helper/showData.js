@@ -32,7 +32,7 @@ export default function ShowData() {
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'cn', headerName: 'Company', width: 120 },
-        { field: 'jp', headerName: 'Profile', width: 120 },
+        { field: 'jp', headerName: 'Profile', width: 180 },
         { field: 'ap', headerName: 'Apply Date', width: 150, type:'date' },
         { field: 'rp', headerName: 'Response Date', width: 170, type:'date' },
         {
@@ -80,7 +80,7 @@ export default function ShowData() {
             )
         }
     }
-
+    const myCount = 1;
     const rows = []
     items.map(item =>{
         rows.push({id:item.id, cn:item.companyName, ap:item.applyDate, 

@@ -20,9 +20,10 @@ function ModalForm (){
         profile:"",
         jobType:"",
         status:"",
+        jobProfile:"",
         location:""
     })
-    const {companyName, applyDate, responseDate, profile, jobType, status, location} = values;
+    const {companyName, applyDate, responseDate, profile, jobType, status, location, jobProfile} = values;
 
     const handleChange = name => event =>{
         setValues({...values, error:false, [name]:event.target.value})
@@ -51,7 +52,7 @@ function ModalForm (){
                             value={companyName} required />
     
                             <label htmlFor="">Apply Date</label>
-                            <input type="text" placeholder="Date of Apply"
+                            <input type="text" placeholder="Date of Apply (yyyy-mm-dd)"
                             onChange={handleChange("applyDate")} 
                             value={applyDate} />
     
@@ -59,9 +60,14 @@ function ModalForm (){
                             <input type="text" placeholder="Where is Location" 
                             onChange={handleChange("location")} required
                             value={location} />
+                            
+                            <label htmlFor="">Job Position</label>
+                            <input type="text" placeholder="Enter Domain" 
+                            onChange={handleChange("jobProfile")} required
+                            value={jobProfile} />
     
                             <label htmlFor="">Acknowledge</label>
-                            <input type="text" placeholder="Expected date of response" 
+                            <input type="text" placeholder="Expected date of response (yyyy-mm-dd)" 
                             onChange={handleChange("responseDate")} required
                             value={responseDate} />
 
@@ -70,15 +76,26 @@ function ModalForm (){
                             onChange={handleChange("profile")} required
                             value={profile} />
 
-                            <label htmlFor="">Job or Intern</label>
-                            <input type="text" placeholder="J or I" 
+                            <label htmlFor="">Job Type</label>
+                            {/* <input type="text" placeholder="" 
                             onChange={handleChange("jobType")} required
-                            value={jobType} />
+                            value={jobType} 
+                            /> */}
+                            <select className="select">
+                                <option name="fullTime">Full Time</option>
+                                <option name="internship">Internship</option>
+                            </select>
+                            
 
                             <label htmlFor="">Status</label>
-                            <input type="text" placeholder="R S and P" 
+                            {/* <input type="text" placeholder="R S and P" 
                             onChange={handleChange("status")} required
-                            value={status} />
+                            value={status} /> */}
+                            <select className="select">
+                                <option name="selected">Selected</option>
+                                <option name="pending">Pending</option>
+                                <option name="rejected">Rejected</option>
+                            </select>
                         </form>
                 </div>
             </div>
