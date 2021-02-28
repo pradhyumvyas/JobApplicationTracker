@@ -81,7 +81,7 @@ function ModalForm (){
                             onChange={handleChange("jobType")} required
                             value={jobType} 
                             /> */}
-                            <select className="select">
+                            <select className="select" onChange={handleChange("jobType")} value={jobType}>
                                 <option name="fullTime">Full Time</option>
                                 <option name="internship">Internship</option>
                             </select>
@@ -91,7 +91,7 @@ function ModalForm (){
                             {/* <input type="text" placeholder="R S and P" 
                             onChange={handleChange("status")} required
                             value={status} /> */}
-                            <select className="select">
+                            <select className="select" onChange={handleChange("status")} value={status}>
                                 <option name="selected">Selected</option>
                                 <option name="pending">Pending</option>
                                 <option name="rejected">Rejected</option>
