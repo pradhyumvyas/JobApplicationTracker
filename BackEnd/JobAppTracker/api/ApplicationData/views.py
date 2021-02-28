@@ -28,13 +28,13 @@ def validate_user_session(id, token):
 
 @csrf_exempt
 def add(request, id, token):
-    if not validate_user_session(id, token, username):
+    if not validate_user_session(id, token):
         return JsonResponse({"errror":"please Login"})
     if request.method == "POST":
-        print("JHIIIIIIIIIIIIIIIIIIIIIIII")
+        # print("JHIIIIIIIIIIIIIIIIIIIIIIII")
 
         user_id = id
-        username = request.POST['username']
+        # username = request.POST['username']
         companyName = request.POST['companyName']
         applyDate = request.POST['applyDate']
         responseDate = request.POST['responseDate']
@@ -50,7 +50,8 @@ def add(request, id, token):
 
         newData = ApplicationData(companyName= companyName, applyDate=applyDate, responseDate=responseDate, jobLocation=jobLocation, jobType=jobType, status=status)
         newData.save()
-    return JsonResponse({'error':'i am'})
+        return JsonResponse({"sucess": "Successfully inserted data"})
+    return JsonResponse({'error':'not a POST Method'})
 
 @csrf_exempt
 

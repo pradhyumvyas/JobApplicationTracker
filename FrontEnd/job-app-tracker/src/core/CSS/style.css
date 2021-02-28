@@ -122,17 +122,15 @@ body {
 .dataForm {
   margin: auto;
   padding: 20px;
-  max-width: 200px;
-  border: 7px solid blueviolet;
-  -webkit-box-shadow: black;
-          box-shadow: black;
+  max-width: 300px;
+  border: 5px solid black;
   background-color: blanchedalmond;
 }
 
 .dataForm input {
-  border-radius: 5%;
+  width: 250px;
+  margin: 10px;
   padding: 5px;
-  margin-bottom: 15px;
 }
 
 .applyForm {
@@ -149,7 +147,7 @@ body {
 }
 
 .myModal {
-  width: 500px;
+  width: auto;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
