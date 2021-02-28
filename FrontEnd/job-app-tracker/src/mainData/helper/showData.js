@@ -31,7 +31,8 @@ export default function ShowData() {
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'cn', headerName: 'Company', width: 170 },
+        { field: 'cn', headerName: 'Company', width: 120 },
+        { field: 'jp', headerName: 'Profile', width: 120 },
         { field: 'ap', headerName: 'Apply Date', width: 150, type:'date' },
         { field: 'rp', headerName: 'Response Date', width: 170, type:'date' },
         {
@@ -84,6 +85,7 @@ export default function ShowData() {
     items.map(item =>{
         rows.push({id:item.id, cn:item.companyName, ap:item.applyDate, 
                     rp:item.responseDate, loc:item.jobLocation, type:item.jobType, 
+                    jp:item.jobProfile,
                     status:statusFunction(item.status)})
     })
     // console.log("My array chek", rows);

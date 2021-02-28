@@ -19,7 +19,7 @@ class ApplicationData(models.Model):
     jobLocation = models.CharField(max_length=150)
 
     jobProfile = models.CharField(max_length=150)
-    jobType = models.CharField(max_length=50, choices=JOB_TYPES)
+    jobType = models.CharField(max_length=150, choices=JOB_TYPES)
 
     STATUS = (
         ('Rejected', 'Rejected'),

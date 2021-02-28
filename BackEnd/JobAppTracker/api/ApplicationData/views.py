@@ -34,13 +34,14 @@ def add(request, id, token):
         # print("JHIIIIIIIIIIIIIIIIIIIIIIII")
 
         user_id = id
-        # username = request.POST['username']
+        username = request.POST['username']
         companyName = request.POST['companyName']
         applyDate = request.POST['applyDate']
         responseDate = request.POST['responseDate']
         jobLocation = request.POST['jobLocation']
         jobType = request.POST['jobType']
-        status = request.POST = ['status']
+        status = request.POST['status']
+        jobProfile = request.POST['jobProfile']
 
         UserModel = get_user_model()
         try:
@@ -48,7 +49,7 @@ def add(request, id, token):
         except UserModel.DoesNotExist:
             return JsonResponse({'error':'User does not exist'})
 
-        newData = ApplicationData(companyName= companyName, applyDate=applyDate, responseDate=responseDate, jobLocation=jobLocation, jobType=jobType, status=status)
+        newData = ApplicationData(username=username ,jobProfile=jobProfile, companyName= companyName, applyDate=applyDate, responseDate=responseDate, jobLocation=jobLocation, jobType=jobType, status=status)
         newData.save()
         return JsonResponse({"sucess": "Successfully inserted data"})
     return JsonResponse({'error':'not a POST Method'})
