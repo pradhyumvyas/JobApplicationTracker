@@ -2,19 +2,24 @@ import React from 'react'
 import { API } from '../../Backend'
 
 export const dataHelper = (id, token, userData) => {
-    return fetch(`${API}ApplicationData/add/${id}/${token}`,{
+    console.log("Innnnnnnnn this fun");
+
+    const formData = new FormData();
+    for (const name in userData){
+        formData.append(name, userData[name])
+    }
+
+    // const formData = new FormData();
+
+    return fetch(`${API}ApplicationData/add/${id}/${token}/`,{
         method:"POST",
-        headers:{
-            Accept:"application/json",
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(userData)
+        body:formData  
     })
     .then((response) =>{
+        console.log("Innnnnnnnn this", response);
         return response.json();
     })
     .catch(err => console.log(err))
 }
-
 
 
