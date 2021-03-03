@@ -1,9 +1,15 @@
 import React, {useState} from 'react'
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from '@material-ui/core'
+import {dataHelper} from './dataHelper'
 
 function ModalForm (){
 
     const [open, setOpen] = useState(false);
+
+    const myDataFromLS = JSON.parse(localStorage.getItem("jwt"))
+
+    const token = myDataFromLS.token;
+    const id = myDataFromLS.user.id;
 
     const handleClickOpen = () => {
     setOpen(true);
@@ -21,16 +27,23 @@ function ModalForm (){
         jobType:"",
         status:"",
         jobProfile:"",
-        location:""
+        jobLocation:""
     })
-    const {companyName, applyDate, responseDate, profile, jobType, status, location, jobProfile} = values;
+    const {companyName, applyDate, responseDate, profile, jobType, status, jobLocation, jobProfile} = values;
 
     const handleChange = name => event =>{
         setValues({...values, error:false, [name]:event.target.value})
     }
 
-    const onSubmit = () =>{
-        return alert("hee")
+    const onSubmit = (event) =>{
+        event.preventDefault();
+        // setValues({...values});
+        dataHelper(id, token, values)
+        .then(
+            response =>{
+                console.log(response);
+            }
+        )
     }
 
     return (
@@ -58,8 +71,8 @@ function ModalForm (){
     
                             <label htmlFor="">Location</label>
                             <input type="text" placeholder="Where is Location" 
-                            onChange={handleChange("location")} required
-                            value={location} />
+                            onChange={handleChange("jobLocation")} required
+                            value={jobLocation} />
                             
                             <label htmlFor="">Job Position</label>
                             <input type="text" placeholder="Enter Domain" 
