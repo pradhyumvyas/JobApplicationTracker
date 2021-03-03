@@ -12,5 +12,7 @@ It is a web app where you can track your own application which you fill before o
 ### Frontend
     - Java Script
     - React JS
+    - HTML5
+    - SCSS
  ### Database
     - Sqlite3
