@@ -2,7 +2,7 @@ import React from 'react'
 import { API } from '../../Backend'
 
 export const dataHelper = (id, token, userData) => {
-    console.log("Innnnnnnnn this fun");
+    console.log("Innnnnnnnn this fun", userData);
 
     const formData = new FormData();
     for (const name in userData){

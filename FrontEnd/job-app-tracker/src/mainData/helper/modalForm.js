@@ -10,6 +10,7 @@ function ModalForm (){
 
     const token = myDataFromLS.token;
     const id = myDataFromLS.user.id;
+    const myUsername = myDataFromLS.user.username
 
     const handleClickOpen = () => {
     setOpen(true);
@@ -20,6 +21,7 @@ function ModalForm (){
     };
 
     const [values, setValues] = useState({
+        username:myUsername,
         companyName:"",
         applyDate:"",
         responseDate:"",
@@ -29,7 +31,7 @@ function ModalForm (){
         jobProfile:"",
         jobLocation:""
     })
-    const {companyName, applyDate, responseDate, profile, jobType, status, jobLocation, jobProfile} = values;
+    const {username, companyName, applyDate, responseDate, profile, jobType, status, jobLocation, jobProfile} = values;
 
     const handleChange = name => event =>{
         setValues({...values, error:false, [name]:event.target.value})
