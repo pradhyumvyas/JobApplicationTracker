@@ -55,7 +55,6 @@ def add(request, id, token):
     return JsonResponse({'error':'not a POST Method'})
 
 @csrf_exempt
-
 def fetchData(request, id):
     # fields = ('companyName','applyDate','responseDate', 'jobLocation', 'jobType','status')
     # print("my usernameeeeeeeee")
