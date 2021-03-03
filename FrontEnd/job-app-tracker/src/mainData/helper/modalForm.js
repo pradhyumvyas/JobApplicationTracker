@@ -29,9 +29,11 @@ function ModalForm (){
         jobType:"",
         status:"",
         jobProfile:"",
-        jobLocation:""
+        jobLocation:"",
+        sucess:false,
+        loading:false
     })
-    const {username, companyName, applyDate, responseDate, profile, jobType, status, jobLocation, jobProfile} = values;
+    const {username, companyName, applyDate, responseDate, profile, jobType, status, jobLocation, jobProfile, sucess, loading} = values;
 
     const handleChange = name => event =>{
         setValues({...values, error:false, [name]:event.target.value})
@@ -39,16 +41,26 @@ function ModalForm (){
 
     const onSubmit = (event) =>{
         event.preventDefault();
-        // setValues({...values});
+        setValues({...values, sucess:false, loading:false});
         dataHelper(id, token, values)
         .then(
-            response =>{
-                console.log(response);
+            response => { 
+                console.log(response)
             }
         )
     }
 
+    const successMessage = () =>{
+        if(sucess === true){
+            console.log("sucess");
+            handleClose()
+        }
+    }
+
     return (
+        <div>
+        {/* {successMessage()} */}
+
         <div className="myModal">
         <div className="buttonAdd">
             <Button className="addButton" variant="contained" color="primary" onClick={handleClickOpen}>
@@ -97,6 +109,7 @@ function ModalForm (){
                             value={jobType} 
                             /> */}
                             <select className="select" onChange={handleChange("jobType")} value={jobType}>
+                                <option name="none"></option>
                                 <option name="fullTime">Full Time</option>
                                 <option name="internship">Internship</option>
                             </select>
@@ -107,6 +120,7 @@ function ModalForm (){
                             onChange={handleChange("status")} required
                             value={status} /> */}
                             <select className="select" onChange={handleChange("status")} value={status}>
+                                <option name="none1"></option>
                                 <option name="selected">Selected</option>
                                 <option name="pending">Pending</option>
                                 <option name="rejected">Rejected</option>
@@ -123,6 +137,7 @@ function ModalForm (){
             </DialogActions>
         </Dialog>
         </div>
+    </div>
     );
 }
 
