@@ -56,9 +56,10 @@ def add(request, id, token):
 
 @csrf_exempt
 
-def fetchData(request):
+def fetchData(request, id):
     # fields = ('companyName','applyDate','responseDate', 'jobLocation', 'jobType','status')
-    result = ApplicationData.objects.all()
+    # print("my usernameeeeeeeee")
+    result = ApplicationData.objects.filter(username=id)
     if(request.method == 'GET'):
         mySerializer = DataSerializer(result, many = True)
         # return Response(serializer.data)

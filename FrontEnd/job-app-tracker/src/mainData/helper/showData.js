@@ -6,11 +6,16 @@ import Button from '@material-ui/core/Button';
 
 
 export default function ShowData() {
+
+    const myDataFromLS = JSON.parse(localStorage.getItem("jwt"))
+    const myUsername = myDataFromLS.user.username
+
+
     const [items, setItems] = useState([])
     const [error, setError] = useState(false)
 
     const loadAllData = () => {
-        fetchData()
+        fetchData(myUsername)
         .then((data) =>{
             console.log("my data", data);
             if(data.error){

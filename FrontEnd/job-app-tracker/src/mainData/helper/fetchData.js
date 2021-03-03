@@ -2,8 +2,8 @@
 import { API } from '../../Backend'
 
 
-export const fetchData = () => {
-    return fetch(`${API}ApplicationData/data/`, {method:"GET"})
+export const fetchData = (id) => {
+    return fetch(`${API}ApplicationData/data/${id}/`, {method:"GET"})
     .then(response => {
         // console.log('API CALLING fetch data', response);
         return response.json();
