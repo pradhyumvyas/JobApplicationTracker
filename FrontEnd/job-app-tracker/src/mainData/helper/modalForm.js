@@ -41,7 +41,7 @@ function ModalForm (){
 
     const onSubmit = (event) =>{
         event.preventDefault();
-        setValues({...values, sucess:false, loading:false});
+        // setValues({...values, sucess:false, loading:false});
         dataHelper(id, token, values)
         .then(
             response => { 
@@ -50,12 +50,12 @@ function ModalForm (){
         )
     }
 
-    const successMessage = () =>{
-        if(sucess === true){
-            console.log("sucess");
-            handleClose()
-        }
-    }
+    // const successMessage = () =>{
+    //     if(sucess === true){
+    //         console.log("sucess");
+    //         handleClose()
+    //     }
+    // }
 
     return (
         <div>
