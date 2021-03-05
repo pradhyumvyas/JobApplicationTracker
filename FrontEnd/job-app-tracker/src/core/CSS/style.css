@@ -5,7 +5,7 @@ body {
 }
 
 .heading {
-  padding: 70px 0;
+  padding-top: 70px;
   text-align: center;
 }
 
@@ -19,6 +19,11 @@ body {
   color: sandybrown;
 }
 
+.subHeading {
+  text-align: center;
+  color: burlywood;
+}
+
 .userAuth {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,13 +32,29 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  background-color: floralwhite;
-  width: 30%;
+  width: auto;
 }
 
 .userAuth button {
+  max-width: 150px;
   margin: 20px;
   font-size: large;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: cadetblue;
+  color: black;
+  text-align: center;
+  border: 2px solid black;
+  padding-bottom: 4px;
+}
+
+.footer a {
+  color: black;
 }
 
 .signinForm {

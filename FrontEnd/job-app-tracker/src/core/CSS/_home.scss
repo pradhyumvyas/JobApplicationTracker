@@ -4,7 +4,7 @@ body{
 }
 
 .heading{
-    padding: 70px 0;
+    padding-top: 70px;
     text-align: center;
     
     h1{
@@ -18,16 +18,38 @@ body{
     }
 }
 
+.subHeading{
+    text-align: center;
+    color: burlywood;
+}
+
+
 .userAuth{
     display: flex;
     justify-content: center;
     margin: auto;
-    background-color: floralwhite;
-    width: 30%;
+    // background-color: floralwhite;
+    width:auto;
     button{
+        max-width: 150px;
         // padding: 20px;
         margin: 20px;
         font-size: large;
     }
     
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: cadetblue;
+    color:black;
+    text-align: center;
+    border: 2px solid black;
+    padding-bottom: 4px;
+    a{
+        color: black;
+    }
 }
