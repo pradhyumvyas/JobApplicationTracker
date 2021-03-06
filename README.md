@@ -9,6 +9,8 @@ It is a web app where you can track your own application which you fill before o
 ### Backend
     - Python3
     - Django Rest Framework
+
+        - Created REST API with the help of Django REST Framework.
 ### Frontend
     - Java Script
     - React JS
