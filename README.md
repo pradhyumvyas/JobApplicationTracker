@@ -18,3 +18,5 @@ It is a web app where you can track your own application which you fill before o
     - SCSS
  ### Database
     - Sqlite3
+
+## Some Snapshorts 
