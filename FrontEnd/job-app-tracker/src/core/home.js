@@ -2,7 +2,7 @@ import React from 'react'
 import './CSS/style.css'
 import {Button} from '@material-ui/core'
 import { useHistory } from "react-router-dom";
-import {ArrowDownwardIcon} from '@material-ui/icons/ArrowDownward';
+// import {ArrowDownwardIcon} from '@material-ui/icons/ArrowDownward';
 
 
 
@@ -22,7 +22,8 @@ function Home() {
                 <h2>Want To Try This Platform</h2>
                 <h3>If Yesss..!</h3>
                 <h4>Go To The Below Buttons !</h4>
-                {ArrowDownwardIcon}
+
+                {/* {ArrowDownwardIcon} */}
             </div>
 
             <div className="userAuth">
