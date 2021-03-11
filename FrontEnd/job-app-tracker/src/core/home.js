@@ -14,7 +14,7 @@ function Home() {
     return (
         <div>
             <div className="heading">
-                <h1>It's  A  Application  Tracker</h1>
+                <h1>It's  An  Application  Tracker</h1>
                 <h5>Where you can track any kind of application</h5>
             </div>
 

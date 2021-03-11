@@ -42,7 +42,7 @@ body {
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -161,16 +161,30 @@ body {
 .buttonAdd {
   padding: 20px 10px;
   margin-left: 0;
+  margin: auto;
 }
 
 .dataForm {
-  color: blue;
+  width: 70vw;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .select {
-  width: 270px;
-  margin: 10px;
-  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100px;
 }
 
 .myModal {

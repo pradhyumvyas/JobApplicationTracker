@@ -2,16 +2,23 @@
 .buttonAdd{
     padding: 20px 10px;
     margin-left: 0;
+    margin: auto;
 }
 
 .dataForm{
-    color:blue;
-    
+    width:70vw;
+    // height:50vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+
 }
+
 .select{
-    width:270px;
-    margin: 10px;
-    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100px;
 }
 
 .myModal{
