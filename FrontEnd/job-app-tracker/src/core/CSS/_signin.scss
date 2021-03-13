@@ -1,39 +1,71 @@
 
-.signinForm{
-    padding-top: 70px;
+// .signinForm{
+//     padding-top: 70px;
 
+// }
+
+
+// .signin{
+//     width: 50vw;
+//     max-width: 300px;
+//     color: black;
+//     margin: auto;
+//     border: 5px solid black;
+//     padding: 20px 30px;
+//     background-color: blanchedalmond;
+
+//     font-size: x-large;
+
+//     h2{
+//         text-align: center;
+//         color: darkblue;
+//     }
+
+
+//     input{
+//         width: 85%;
+//         padding: 12px 20px;
+//         margin: 8px 0;
+//         border-radius: 5%;
+//         display: inline-block;
+//         border: 3px solid #ccc;
+//         box-sizing: border-box;
+//     }
+//     button{
+//         width: 85%;
+//         text-align: center;
+//         margin: 8px 0;
+//     }
+// }
+
+
+.signinForm{
+    width: 50vw;
+    border: 1px solid red;
+    margin: 0 auto;
 }
 
-
 .signin{
-    width: 50vw;
-    max-width: 300px;
-    color: black;
-    margin: auto;
-    border: 5px solid black;
-    padding: 20px 30px;
-    background-color: blanchedalmond;
-
-    font-size: x-large;
-
-    h2{
-        text-align: center;
-        color: darkblue;
-    }
 
 
-    input{
-        width: 85%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        border-radius: 5%;
-        display: inline-block;
-        border: 3px solid #ccc;
-        box-sizing: border-box;
-    }
-    button{
-        width: 85%;
-        text-align: center;
-        margin: 8px 0;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        h2{
+            text-align: center;
+        }
+
+        input{
+            width: 85%;
+            padding: 12px 20px;
+            margin: 1rem
+            border-radius: 5%;
+            display: inline-block;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+        }
     }
 }
