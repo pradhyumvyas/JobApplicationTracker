@@ -94,20 +94,25 @@ function Signin() {
                 <div className="signin">
                     <form action="">
                         <h2>Sign In</h2> 
-                        <label htmlFor="">Username</label>
-                        <input type="text" placeholder="Enter User Name" value={username} 
-                        onChange={handleChange("username")}
-                        />
+                        <div className="userName">
+                            <label htmlFor="" >Username</label>
+                            <input type="text" placeholder="Enter User Name" value={username} 
+                                onChange={handleChange("username")}
+                            />                            
+                        </div>
 
-                        <label htmlFor="">password</label>
-                        <input type="password" placeholder="Enter Password"
-                        value={password} onChange={handleChange("password")}
-                        />
+                        <div className="password">
+                            <label htmlFor="" className="password">password</label>
+                            <input type="password" placeholder="Enter Password"
+                                value={password} onChange={handleChange("password")}
+                            />
+                        </div>
+                        <div className="buttons">
+                            <Button variant="contained" color="primary" onClick={onLoginSubmit} >Login</Button>
 
-                        <Button variant="contained" color="primary" onClick={onLoginSubmit} >Login</Button>
-
-                        <Button variant="contained" color="primary" onClick={signupPush} >Sign Up</Button>
-                        <Button color="primary" >Forgot Password ?</Button>
+                            <Button variant="contained" color="primary" onClick={signupPush} >Sign Up</Button>
+                        </div>
+                        <Button color="primary" className="forgetPassword" >Forgot Password ?</Button>
 
                     </form>
                 </div>
