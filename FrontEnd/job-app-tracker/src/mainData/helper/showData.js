@@ -1,8 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { fetchData } from './fetchData'
 import { DataGrid } from '@material-ui/data-grid';
-import Button from '@material-ui/core/Button';
-
 
 
 export default function ShowData() {
