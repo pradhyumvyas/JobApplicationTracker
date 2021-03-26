@@ -58,12 +58,8 @@ export default function ShowData() {
     const statusFunction = (clr) =>{
         if(clr == "Selected"){
             const mlr = <div className="status">
-                {/* <Button variant="contained" color="secondary">
-                    Selected
-                </Button> */}
                 Selected
             </div>
-            // console.log('meee',mlr.props.children);
             return (
                 mlr.props.children
             )
