@@ -11,16 +11,17 @@ body {
 
 .heading h1 {
   font-size: xxx-large;
-  color: sandybrown;
+  color: #21d4e0;
 }
 
 .heading h5 {
   font-size: x-large;
-  color: sandybrown;
+  color: #15bbc7;
 }
 
 .subHeading {
   text-align: center;
+  font-size: large;
   color: burlywood;
 }
 
