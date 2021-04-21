@@ -9,8 +9,8 @@ from rest_framework import viewsets
 
 # Create your views here.
 
-from .serializers import DataSerializer
-from .models import ApplicationData
+from .serializers import DataSerializer, CompanySerializer
+from .models import ApplicationData,CompanyList
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user_model
 
@@ -25,6 +25,17 @@ def validate_user_session(id, token):
         return False
     except UserModel.DoesNotExist:
         return False
+
+@csrf_exempt
+def companyLists(request):
+    companiesList = CompanyList.objects.all()
+    # print("HEEEEEEEEEEEEEEEELllllllllllllllll")
+    if(request.method == "GET"):
+        myCompanySerializer =  CompanySerializer(companiesList,many=True)
+        return JsonResponse(myCompanySerializer.data, safe=False)
+    else:
+        return JsonResponse({"error":"Something went wrong"})
+
 
 @csrf_exempt
 def add(request, id, token):
@@ -56,8 +67,6 @@ def add(request, id, token):
 
 @csrf_exempt
 def fetchData(request, id):
-    # fields = ('companyName','applyDate','responseDate', 'jobLocation', 'jobType','status')
-    # print("my usernameeeeeeeee")
     result = ApplicationData.objects.filter(username=id)
     if(request.method == 'GET'):
         mySerializer = DataSerializer(result, many = True)
@@ -65,4 +74,5 @@ def fetchData(request, id):
         return JsonResponse(mySerializer.data, safe=False)
 class DataViewSet(viewsets.ModelViewSet):
     queryset = ApplicationData.objects.all()
+    # queryset = CompanyList.objects.all()
     serializer_class = DataSerializer
