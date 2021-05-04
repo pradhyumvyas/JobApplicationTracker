@@ -1,11 +1,12 @@
+
 import React, {useState} from 'react'
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from '@material-ui/core'
 import {dataHelper} from './dataHelper'
 import {useHistory} from 'react-router-dom'
 
-function ModalForm (){
-
+function AddData() {
     const [open, setOpen] = useState(false);
+
 
     const myDataFromLS = JSON.parse(localStorage.getItem("jwt"))
 
@@ -14,7 +15,7 @@ function ModalForm (){
     const myUsername = myDataFromLS.user.username
 
     const history = useHistory()
-    const dashboardPush = () =>(history.push("/addData"))
+    const dashboardPush = () =>(history.push("/dashboard"))
 
     const handleClickOpen = () => {
     setOpen(true);
@@ -66,15 +67,8 @@ function ModalForm (){
         )
     }
 
-    // const successMessage = () =>{
-    //     if(sucess === true){
-    //         console.log("sucess");
-    //         handleClose()
-    //     }
-    // }
-
     return (
-        <div>
+<div>
         {/* {successMessage()} */}
 
         <div className="myModal">
@@ -83,6 +77,9 @@ function ModalForm (){
                 Add Data
             </Button>
         </div>
+        <Button className="addButton" variant="contained" color="primary" onClick={dashboardPush}>
+                Home
+            </Button>
         <Dialog open={open}   onClose={handleClose} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title">Add Application Data</DialogTitle>
             <DialogContent>
@@ -154,7 +151,7 @@ function ModalForm (){
         </Dialog>
         </div>
     </div>
-    );
+    )
 }
 
-export default ModalForm
+export default AddData

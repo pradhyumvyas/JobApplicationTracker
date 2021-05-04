@@ -6,7 +6,7 @@ import Home from './core/home'
 import Dashboard from './mainData/Dashboard';
 import Signin from './user/Signin'
 import Signup from './user/Signup';
-
+import AddData from './mainData/helper/AddData'
 
 function Routes() {
     return (
@@ -15,7 +15,7 @@ function Routes() {
             <Route path="/" exact component={Home} ></Route>
             <Route path="/signin" exact component={Signin} ></Route>
             <Route path="/signup" exact component={Signup} ></Route>
-            {/* <Route path="/dashboard" exact component={Dashboard} ></Route> */}
+            <Route path="/addData" exact component={AddData} ></Route>
             <PrivateRoutes path="/dashboard" exact component={Dashboard} ></PrivateRoutes>
         </Switch>
         </BrowserRouter>

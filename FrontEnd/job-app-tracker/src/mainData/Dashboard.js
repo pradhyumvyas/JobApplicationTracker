@@ -4,11 +4,12 @@ import {signout, isAuthenticated} from '../auth/helper/index'
 import { useHistory } from 'react-router-dom'
 import modalForm from './helper/modalForm'
 import ShowData from './helper/showData'
-
+import AddData from './helper/AddData'
 
 function Dashboard(){
     const history = useHistory();
     const signoutPush = () => history.push('/')
+    const addPush = () =>(history.push("/addData"))
 
 
     const homeRedirect = () =>{
@@ -41,7 +42,11 @@ function Dashboard(){
     return (
         <div>
             {myNavbar()}
-            {modalForm()}
+            <div className="buttonAdd">
+            <Button className="addButton" variant="contained" color="primary" onClick={addPush}>
+                Add Data
+            </Button>
+        </div>
             <ShowData />
             {/* <modalForm /> */}
             {/* {showData()} */}
