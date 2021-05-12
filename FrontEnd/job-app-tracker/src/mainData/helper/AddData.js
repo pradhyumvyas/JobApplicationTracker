@@ -99,20 +99,22 @@ function AddData() {
                 <div className="companyCard">
                     {companyList.map(e=>(
                         // <h1>{e.companyName}</h1>
-                        <Card className="oneCard"> 
-                            <CardContent>
-                                <Typography color="textSecondary" gutterBottom>
-                                    Company ID:{e.companyID}
-                                </Typography>
-                                <Typography variant="h5" component="h2">
-                                    Name:{e.companyName}
-                                </Typography>
-                                <Typography>
-                                    Discription:{e.companyDiscription}
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    ))}
+                        <div className="oneCard">
+                            <Card > 
+                                <CardContent>
+                                    <Typography color="textSecondary" gutterBottom>
+                                        Company ID:{e.companyID}
+                                    </Typography>
+                                    <Typography variant="h5" component="h2">
+                                        Name:{e.companyName}
+                                    </Typography>
+                                    <Typography>
+                                        Discription:{e.companyDiscription}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    ))} 
                 </div>
             </div>
         )

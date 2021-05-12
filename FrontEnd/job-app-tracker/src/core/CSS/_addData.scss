@@ -8,15 +8,19 @@
 }
 
 .companyCard{
-    // min-width: 275
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
 }
 .oneCard{
     // min-width: 275px;
-    width: 40%;
-    color: greenyellow;
+    // max-width: 40%;
+    margin: 2vw;
+    // color: greenyellow;
 }
 
-.MuiPaper-root {
-    margin: 5px;
-    width: 40%;
-}
+// .MuiPaper-root {
+//     margin: 5px;
+//     width: 40%;
+// }
