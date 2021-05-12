@@ -1,8 +1,10 @@
 
-import React, {useState} from 'react'
-import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from '@material-ui/core'
+import React, {useState, useEffect} from 'react'
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle, AppBar, Card, CardContent, Typography} from '@material-ui/core'
 import {dataHelper} from './dataHelper'
 import {useHistory} from 'react-router-dom'
+import { companyLists } from './companyList'
+
 
 function AddData() {
     const [open, setOpen] = useState(false);
@@ -19,12 +21,15 @@ function AddData() {
 
     const handleClickOpen = () => {
     setOpen(true);
+    console.log("My Company Lists",companyList);
+
     };
 
     const handleClose = () => {
     setOpen(false);
     };
 
+    const [companyList, setCompanyList] = useState([])
     const [values, setValues] = useState({
         username:myUsername,
         companyName:"",
@@ -43,7 +48,27 @@ function AddData() {
         setValues({...values, error:false, [name]:event.target.value})
     }
 
+    const fetchCompanyList = () =>{
+        companyLists()
+        .then((data) =>{
+            if(data.error){
+                alert("Something went wrong")
+            }
+            else{
+                setCompanyList(data)
+                console.log("company Data", data);
+            }
+        })
+        .catch((err)=>{console.log(err)})
+    }
+
+    useEffect(() => {
+        fetchCompanyList();
+    },[])
+
     const onSubmit = (event) =>{
+
+
         
         // return dashboardPush()
 
@@ -67,19 +92,53 @@ function AddData() {
         )
     }
 
+    const showCompanyLists = () =>{
+        // console.log("Hrlllllllllllllllllllllllll");
+        return(
+            <div>
+                <div className="companyCard">
+                    {companyList.map(e=>(
+                        // <h1>{e.companyName}</h1>
+                        <Card className="oneCard"> 
+                            <CardContent>
+                                <Typography color="textSecondary" gutterBottom>
+                                    Company ID:{e.companyID}
+                                </Typography>
+                                <Typography variant="h5" component="h2">
+                                    Name:{e.companyName}
+                                </Typography>
+                                <Typography>
+                                    Discription:{e.companyDiscription}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+            </div>
+        )
+    }
+
     return (
 <div>
         {/* {successMessage()} */}
 
         <div className="myModal">
-        <div className="buttonAdd">
-            <Button className="addButton" variant="contained" color="primary" onClick={handleClickOpen}>
-                Add Data
-            </Button>
-        </div>
-        <Button className="addButton" variant="contained" color="primary" onClick={dashboardPush}>
-                Home
-            </Button>
+            <div className="addDataNavBar">
+                <AppBar >
+                    <div className="buttonAdd">
+                    <Button className="addButton" variant="contained" color="secondary" onClick={handleClickOpen}>
+                            Add Data
+                        </Button>
+        
+                        <Button className="addButton" variant="contained" color="secondary" onClick={dashboardPush}>
+                            Home
+                        </Button>
+                    </div>
+                </AppBar>
+                    <h1>Helll</h1>
+            </div>
+
+        
         <Dialog open={open}   onClose={handleClose} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title">Add Application Data</DialogTitle>
             <DialogContent>
@@ -150,6 +209,7 @@ function AddData() {
             </DialogActions>
         </Dialog>
         </div>
+        {showCompanyLists()}
     </div>
     )
 }

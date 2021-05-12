@@ -10,3 +10,4 @@ export const fetchData = (id) => {
     })
     .catch(err => console.log(err))
 }
+
