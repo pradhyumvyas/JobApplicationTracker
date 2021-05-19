@@ -201,9 +201,10 @@ body {
   background-color: cadetblue;
 }
 
-.MuiButton-label {
-  margin-right: auto;
-  width: 500px;
+.MuiToolbar-root {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .dataForm {

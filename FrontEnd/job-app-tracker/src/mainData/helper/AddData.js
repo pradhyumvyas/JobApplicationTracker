@@ -4,6 +4,7 @@ import {Button, Dialog, DialogActions, DialogContent, DialogTitle, AppBar, Card,
 import {dataHelper} from './dataHelper'
 import {useHistory} from 'react-router-dom'
 import { companyLists } from './companyList'
+import { MyNavbar } from '../Dashboard'
 
 
 function AddData() {
@@ -123,22 +124,11 @@ function AddData() {
     return (
 <div>
         {/* {successMessage()} */}
-
+        <MyNavbar />
         <div className="myModal">
-            <div className="addDataNavBar">
-                <AppBar >
-                    <div className="buttonAdd">
                     <Button className="addButton" variant="contained" color="secondary" onClick={handleClickOpen}>
                             Add Data
                         </Button>
-        
-                        <Button className="addButton" variant="contained" color="secondary" onClick={dashboardPush}>
-                            Home
-                        </Button>
-                    </div>
-                </AppBar>
-                    <h1>Helll</h1>
-            </div>
 
         
         <Dialog open={open}   onClose={handleClose} aria-labelledby="form-dialog-title">
