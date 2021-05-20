@@ -8,7 +8,7 @@ function Profile() {
             <div className="User Profile">
                 <div className="card">
                     <div className="leftProfile">
-                        <h1>IMG</h1>
+                        <img src="" alt=""/>
                     </div>
                     <div className="rightProfile">
                         <h1>User Details</h1>
