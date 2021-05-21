@@ -303,8 +303,12 @@ body {
   margin: 2vw;
 }
 
+.userProfile {
+  padding-top: 6vw;
+}
+
 .card {
-  padding-top: 4vw;
+  margin: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,5 +318,19 @@ body {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: auto;
+  height: 70vh;
+  border: 2px solid black;
+  border-radius: 5%;
+  background-color: #96cfd1;
+  color: #e23213;
+}
+
+.leftProfile {
+  margin-top: 10%;
+}
+
+.rightProfile {
+  margin-top: 7%;
 }
 /*# sourceMappingURL=style.css.map */

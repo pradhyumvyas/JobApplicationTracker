@@ -1,6 +1,25 @@
+.userProfile{
+    padding-top: 6vw;
+}
+
 .card{
-    padding-top: 4vw;
+    margin: 20px;
     display: flex;
     flex-direction: row;
     justify-content:  space-around;
+    width: auto;
+    height: 70vh;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: rgb(150, 207, 209);
+
+    color:rgb(226, 50, 19);
+}
+
+.leftProfile{
+    margin-top: 10%;
+}
+
+.rightProfile{
+    margin-top: 7%;
 }
