@@ -19,6 +19,7 @@ function Profile() {
                         <h3>Name: {currentUserData['user'].firstName} {currentUserData['user'].lastName}</h3>
                         <h3>Email: {currentUserData['user'].email}</h3>
                         <h3>Username: {currentUserData['user'].username}</h3>
+                        <h3>last login: {currentUserData['user'].lastlogin}</h3>
                     </div>
                 </div>
             </div>
