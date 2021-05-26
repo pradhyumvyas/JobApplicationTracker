@@ -327,10 +327,17 @@ body {
 }
 
 .leftProfile {
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 .rightProfile {
   margin-top: 7%;
+}
+
+.profileImages {
+  height: 350px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px dashed black;
 }
 /*# sourceMappingURL=style.css.map */

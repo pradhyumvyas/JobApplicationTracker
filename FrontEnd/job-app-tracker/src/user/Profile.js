@@ -28,52 +28,31 @@ function Profile() {
             <div className="userProfile">
                 <div className="card">
                     <div className="leftProfile">
-                        {/* <img src={download} alt=""/> */}
-
                         <div
-                            style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "center"
-                            }}
-                        >
+                            className="profileImages"
+                            onClick={() => imageUploader.current.click()}
+                            > 
+                            <img
+                                className="profileImages"
+                                src={download}
+                                ref={uploadedImage}
+                            />
+                        </div>
 
                         <input
                             type="file"
                             accept="image/*"
                             onChange={handleImageUpload}
                             ref={imageUploader}
-                            style={{
-                                display: "none"
-                            }}
-                            />
-                            <div
-                                style={{
-                                    height: "60px",
-                                    width: "60px",
-                                    border: "1px dashed black"
-                                }}
-                                onClick={() => imageUploader.current.click()}
-                            >
-                                <img
-                                    ref={uploadedImage}
-                                    style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        position: "absolute"
-                                    }}
-                                />
-                                </div>
-                                Click to upload Image
-                            </div>
+                            /> 
                     </div>
+                    
                     <div className="rightProfile">
                         <h1>User Details</h1>
                         <h3>Name: {currentUserData['user'].firstName} {currentUserData['user'].lastName}</h3>
                         <h3>Email: {currentUserData['user'].email}</h3>
                         <h3>Username: {currentUserData['user'].username}</h3>
-                        <h3>last login: {currentUserData['user'].lastlogin}</h3>
+                        <h3>last login: {currentUserData['user'].last_login}</h3>
                     </div>
                 </div>
             </div>
